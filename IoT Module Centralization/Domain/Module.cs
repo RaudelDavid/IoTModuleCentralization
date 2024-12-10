@@ -1,15 +1,29 @@
-﻿namespace IoT_Module_Centralization.Domain
+﻿using CentralizadorIIoT.Domain;
+
+namespace IoT_Module_Centralization.Domain
 {
     public class Module
     {
-        public int Id { get; set; }  // Identificador único del módulo
+        public Guid Id { get; set; } = Guid.NewGuid();  // Identificador único
         public string Name { get; set; }  // Nombre del módulo
-        public string IpAddress { get; set; }  // Dirección IP del módulo
-        public int Port { get; set; }  // Puerto de acceso (número entero de hasta 4 cifras)
-        public string Status { get; set; }  // Estado actual (conectado o desconectado)
+        public DireccionModulo Direccion { get; set; }  // Dirección IP y puerto
+        public EstadoModulo Status { get; set; }  // Estado del módulo
 
-        // Propiedad de navegación para las unidades
+        // Relación con las unidades (muchos a muchos)
         public ICollection<Unit> Units { get; set; } = new List<Unit>();
+
+        // Relación con los mensajes (uno a muchos)
+        public ICollection<Message> Messages { get; set; } = new List<Message>();
+
+        // Constructor
+        public Module(string name, DireccionModulo direccion, EstadoModulo status)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("El nombre no puede estar vacío.", nameof(name));
+
+            Name = name;
+            Direccion = direccion ?? throw new ArgumentNullException(nameof(direccion));
+            Status = status;
+        }
     }
 }
-

@@ -2,14 +2,25 @@
 {
     public class Message
     {
-        public int Id { get; set; }  // Identificador único del mensaje
-        public string Content { get; set; }  // Texto del mensaje
-        public DateTime Timestamp { get; set; }  // Fecha y hora en que se generó el mensaje
-        public int ModuleId { get; set; }  // Identificador del módulo que generó el mensaje
-        public string Priority { get; set; }  // Prioridad del mensaje (baja, media, alta)
+        public Guid Id { get; set; } = Guid.NewGuid();  // Identificador único
+        public string Content { get; set; }  // Contenido del mensaje
+        public DateTime Timestamp { get; set; }  // Fecha y hora
+        public Prioridad Priority { get; set; }  // Prioridad (Enumeración)
 
-        // Propiedad de navegación para el módulo
-        public Module Module { get; set; }
+        // Relación con el módulo (un mensaje está asociado a un único módulo)
+        public Guid ModuleId { get; set; }  // ID del módulo al que pertenece
+        public Module Module { get; set; }  // Navegación hacia el módulo
+
+        // Constructor
+        public Message(string content, DateTime timestamp, Prioridad priority, Module module)
+        {
+            if (string.IsNullOrWhiteSpace(content))
+                throw new ArgumentException("El contenido no puede estar vacío.", nameof(content));
+
+            Content = content;
+            Timestamp = timestamp;
+            Priority = priority;
+            Module = module ?? throw new ArgumentNullException(nameof(module));
+        }
     }
-
 }
