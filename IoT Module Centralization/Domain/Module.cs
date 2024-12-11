@@ -18,8 +18,8 @@ namespace IoT_Module_Centralization.Domain
         // Constructor
         public Module(string name, DireccionModulo direccion, EstadoModulo status)
         {
-            if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentException("El nombre no puede estar vacío.", nameof(name));
+           if (string.IsNullOrWhiteSpace(name))
+               // throw new ArgumentException("El nombre no puede estar vacío.", nameof(name));
 
             Name = name;
             Direccion = direccion ?? throw new ArgumentNullException(nameof(direccion));
@@ -27,3 +27,4 @@ namespace IoT_Module_Centralization.Domain
         }
     }
 }
+//TODO: inicializaciones dentro de los constructores
