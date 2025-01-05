@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>using_IoT_Module_Centralization.Contracts</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IoT_Module_Centralization.DataAccess\IoT_Module_Centralization.DataAccess.csproj" />
+    <ProjectReference Include="..\IoT_Module_Centralization.Domain\IoT_Module_Centralization.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

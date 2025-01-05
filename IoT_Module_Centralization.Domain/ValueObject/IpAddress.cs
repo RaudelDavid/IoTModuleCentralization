@@ -6,6 +6,9 @@ namespace IoT_Module_Centralization.Domain.ValueObjects
     {
         public string Value { get; }
 
+        // Constructor sin parámetros para EF Core
+        protected IpAddress() { }
+
         // Constructor que valida la dirección IP
         public IpAddress(string value)
         {
@@ -43,5 +46,10 @@ namespace IoT_Module_Centralization.Domain.ValueObjects
         }
 
         public override string ToString() => Value;
+
+        protected IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Value;
+        }
     }
 }

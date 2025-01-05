@@ -4,6 +4,9 @@
     {
         public int Value { get; }
 
+        // Constructor sin parámetros para EF Core
+        protected Port() { }
+
         // Constructor que valida el puerto
         public Port(int value)
         {
@@ -35,5 +38,10 @@
         }
 
         public override string ToString() => Value.ToString();
+
+        protected IEnumerable<object> GetEqualityComponents()
+        {
+            yield return Value;
+        }
     }
 }

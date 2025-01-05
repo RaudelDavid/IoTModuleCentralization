@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <Compile Remove="test.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstract\" />
     <Folder Include="Utilities\" />
     <Folder Include="Types\" />
   </ItemGroup>

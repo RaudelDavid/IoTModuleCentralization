@@ -1,8 +1,13 @@
-﻿namespace IoT_Module_Centralization.Domain.ValueObjects
+﻿using IoT_Module_Centralization.Domain.Common;
+
+namespace IoT_Module_Centralization.Domain.ValueObjects
 {
-    public class CodigoUnidad
+    public class CodigoUnidad : ValueObject
     {
         public string Value { get; }
+
+        // Constructor sin parámetros para EF Core
+        protected CodigoUnidad() { }
 
         // Constructor que valida el código de unidad
         public CodigoUnidad(string value)
@@ -38,5 +43,11 @@
         }
 
         public override string ToString() => Value;
+
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            // Implementa los componentes de igualdad si es necesario
+            yield return Value;
+        }
     }
 }

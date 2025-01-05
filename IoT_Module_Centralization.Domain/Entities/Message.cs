@@ -1,8 +1,9 @@
-﻿namespace IoT_Module_Centralization.Domain.Entities
+﻿using IoT_Module_Centralization.Domain.Common;
+
+namespace IoT_Module_Centralization.Domain.Entities
 {
-    public class Message
+    public class Message : BaseEntity
     {
-        public Guid Id { get; private set; } = Guid.NewGuid();  // Identificador único
         public string Content { get; private set; }  // Texto del mensaje
         public DateTime Timestamp { get; private set; }  // Fecha y hora en que se generó
         public string Priority { get; private set; }  // Prioridad (baja, media, alta)
