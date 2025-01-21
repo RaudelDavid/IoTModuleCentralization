@@ -14,8 +14,9 @@ namespace IoT_Module_Centralization.Domain.Entities
 
         protected Module() { }
 
-        public Module(string name, IpAddress ipAddress, Port port, string status)
+        public Module(Guid id, string name, IpAddress ipAddress, Port port, string status)
         {
+            Id = id;
             Name = name;
             IpAddress = ipAddress;
             Port = port;

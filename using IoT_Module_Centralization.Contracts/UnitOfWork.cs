@@ -33,9 +33,8 @@ namespace IoT_Module_Centralization.DataAccess
             }
         }
 
-        /// <summary>
+        
         /// Guarda los cambios realizados en el contexto.
-        /// </summary>
         /// <returns>Número de entidades afectadas.</returns>
         public async Task<int> SaveChangesAsync()
         {

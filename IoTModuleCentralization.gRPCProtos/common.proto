@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "IoT_Module_Centralization.gRPC";
+
+package common;
+
+message Empty {}
+
+message ModuleDTO {
+  string id = 1;
+  string name = 2;
+  string ipAddress = 3;
+  string port = 4;
+  string status = 5;
+}
+
+message UnitDTO {
+  string id = 1;
+  string code = 2;
+  string name = 3;
+  string area = 4;
+  string moduleId = 5;
+}
+
+message MessageDTO {
+  string id = 1;
+  string content = 2;
+  string timestamp = 3;
+  string priority = 4;
+  string moduleId = 5;
+}

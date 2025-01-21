@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.23.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IoTModuleCentralization.gRPCProtos\IoT_Module_Centralization.gRPCProtos.csproj" />
+    <ProjectReference Include="..\IoTModuleCentralization.Tests\IoTModuleCentralization.DataAccess.Tests.csproj" />
+    <ProjectReference Include="..\IoT_Module_Centralization.DataAccess\IoT_Module_Centralization.DataAccess.csproj" />
+    <ProjectReference Include="..\IoT_Module_Centralization.Domain\IoT_Module_Centralization.Domain.csproj" />
+    <ProjectReference Include="..\using IoT_Module_Centralization.Contracts\IoT_Module_Centralization.Contracts.csproj" />
+    <ProjectReference Include="..\using IoT_Module_Centralization.gRPCProtos\IoT_Module_Centralization.gRPCProtos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\IoTModuleCentralization.gRPCProtos\common.proto" GrpcServices="Server">
+      <Link>Protos\common.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\IoTModuleCentralization.gRPCProtos\IoTService.proto" GrpcServices="Server">
+      <Link>Protos\IoTService.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+
+</Project>

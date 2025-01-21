@@ -6,17 +6,23 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT_Module_Centralization.Domain", "IoT_Module_Centralization.Domain\IoT_Module_Centralization.Domain.csproj", "{82067285-A812-41BB-A6DB-A781B1A1A3F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT_Module_Centralization.DataAccess", "IoT_Module_Centralization.DataAccess\IoT_Module_Centralization.DataAccess.csproj", "{F0389091-99F7-4D1D-B674-2AF42E4623F4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{82067285-A812-41BB-A6DB-A781B1A1A3F7} = {82067285-A812-41BB-A6DB-A781B1A1A3F7}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{86403CA6-3DB1-497E-8E2F-CE45FD92FD63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT_Module_Centralization.Contracts", "using IoT_Module_Centralization.Contracts\IoT_Module_Centralization.Contracts.csproj", "{DE398FAB-17DE-4F3E-AD6F-6DC42289F8C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTModuleCentralization.DataAccess.Tests", "IoTModuleCentralization.Tests\IoTModuleCentralization.DataAccess.Tests.csproj", "{0A16C2A3-E91A-48C2-81E9-51E6ADE7CECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT_Module_Centralization.gRPCService", "IoTModuleCentralization.gRPCService\IoT_Module_Centralization.gRPCService.csproj", "{FD770D93-044B-4621-A0F9-1EB415E75995}"
 	ProjectSection(ProjectDependencies) = postProject
+		{0A16C2A3-E91A-48C2-81E9-51E6ADE7CECB} = {0A16C2A3-E91A-48C2-81E9-51E6ADE7CECB}
+		{802A2E8B-B2F9-4625-A2C8-D84C719C742A} = {802A2E8B-B2F9-4625-A2C8-D84C719C742A}
 		{82067285-A812-41BB-A6DB-A781B1A1A3F7} = {82067285-A812-41BB-A6DB-A781B1A1A3F7}
+		{DE398FAB-17DE-4F3E-AD6F-6DC42289F8C3} = {DE398FAB-17DE-4F3E-AD6F-6DC42289F8C3}
 		{F0389091-99F7-4D1D-B674-2AF42E4623F4} = {F0389091-99F7-4D1D-B674-2AF42E4623F4}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT_Module_Centralization.Contracts", "using IoT_Module_Centralization.Contracts\IoT_Module_Centralization.Contracts.csproj", "{DE398FAB-17DE-4F3E-AD6F-6DC42289F8C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT_Module_Centralization.gRPCProtos", "IoTModuleCentralization.gRPCProtos\IoT_Module_Centralization.gRPCProtos.csproj", "{802A2E8B-B2F9-4625-A2C8-D84C719C742A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +46,18 @@ Global
 		{DE398FAB-17DE-4F3E-AD6F-6DC42289F8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE398FAB-17DE-4F3E-AD6F-6DC42289F8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE398FAB-17DE-4F3E-AD6F-6DC42289F8C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A16C2A3-E91A-48C2-81E9-51E6ADE7CECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A16C2A3-E91A-48C2-81E9-51E6ADE7CECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A16C2A3-E91A-48C2-81E9-51E6ADE7CECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A16C2A3-E91A-48C2-81E9-51E6ADE7CECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD770D93-044B-4621-A0F9-1EB415E75995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD770D93-044B-4621-A0F9-1EB415E75995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD770D93-044B-4621-A0F9-1EB415E75995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD770D93-044B-4621-A0F9-1EB415E75995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802A2E8B-B2F9-4625-A2C8-D84C719C742A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802A2E8B-B2F9-4625-A2C8-D84C719C742A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802A2E8B-B2F9-4625-A2C8-D84C719C742A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802A2E8B-B2F9-4625-A2C8-D84C719C742A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

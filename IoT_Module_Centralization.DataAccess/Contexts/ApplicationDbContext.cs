@@ -10,10 +10,18 @@ namespace IoT_Module_Centralization.DataAccess.Contexts
         public DbSet<Unit> Units { get; set; }
         public DbSet<Message> Messages { get; set; }
 
+        // Constructor que toma DbContextOptions
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Configuración para usar SQLite
-            optionsBuilder.UseSqlite("Data Source=IoTModuleCentralization.db");
+            if (!optionsBuilder.IsConfigured)
+            {
+                // Configuración por defecto (por si no se pasan opciones)
+                optionsBuilder.UseSqlite("Data Source=IoTModuleCentralization.db");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

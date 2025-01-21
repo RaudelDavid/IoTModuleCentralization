@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" Version="3.7.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IoT_Module_Centralization.DataAccess\IoT_Module_Centralization.DataAccess.csproj" />
+    <ProjectReference Include="..\IoT_Module_Centralization.Domain\IoT_Module_Centralization.Domain.csproj" />
+    <ProjectReference Include="..\using IoT_Module_Centralization.Contracts\IoT_Module_Centralization.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

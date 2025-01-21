@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "IoT_Module_Centralization.gRPC";
+
+package iot_service;
+
+import "common.proto";
+
+service IoTService {
+  rpc GetAllModules(Empty) returns (stream ModuleDTO);
+  rpc GetModuleById(ModuleDTO) returns (ModuleDTO);
+  rpc AddModule(ModuleDTO) returns (Empty);
+  rpc DeleteModule(ModuleDTO) returns (Empty);
+
+  rpc GetAllUnits(Empty) returns (stream UnitDTO);
+  rpc AddUnit(UnitDTO) returns (Empty);
+  rpc DeleteUnit(UnitDTO) returns (Empty);
+
+  rpc GetAllMessages(Empty) returns (stream MessageDTO);
+  rpc AddMessage(MessageDTO) returns (Empty);
+}
+message ModuleDTO {
+  string id = 1;
+  string name = 2;
+  string ip_address = 3;
+  int32 port = 4;
+  string status = 5;
+}
+
+message ModuleIdRequest {
+  string id = 1;
+}
